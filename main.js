@@ -69,7 +69,8 @@ $(document).ready(function(){
     
     $(".textfield").on('propertychange change keyup paste input', function(){
         $('label[for='+this.id+']').show();
-        if ($(".textfield").val() == ""){
+        console.log(this.id)
+        if ($("#"+this.id).val() == ""){
             $('label[for='+this.id+']').hide()
         }
         var cgpaTLS = parseFloat($("#cgpaTillLastSem").val())
