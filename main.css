@@ -57,8 +57,11 @@ button{
     margin-bottom: 0 !important;
 }
 
-.active{
+.selected{
     border-bottom: 2px solid #2d85fd !important;
+}
+
+.active{
     color: #2d85fd !important;
     letter-spacing: .5px !important;
 }
