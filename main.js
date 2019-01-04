@@ -40,7 +40,8 @@ function refreshGPA(id){
             console.log(totalCredits)
             }
         totalCGPA = totalmarks/totalCredits
-        totalCGPA.toFixed(2);
+        totalCGPA = totalCGPA.toFixed(2);
+        console.log(totalCGPA)
         $(".sgpa").html(totalCGPA + '<span class="small">/10</span>')
         $(".gpaval").show()
     }
