@@ -75,7 +75,6 @@ $(document).ready(function(){
         }
         else if (cgpaTLS > 10){
             $(".cgpa1").show()
-            $("#cgpaTillLastSem").css('border-color', 'red !important');
             $(".gpaval").hide()
         }
         else if (cgpaTS > 10){
