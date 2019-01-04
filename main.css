@@ -83,6 +83,19 @@ button{
     font-size: 120% !important;
 }
 
+
+.subject0{
+    margin: 3% !important;
+}
+
+.subject0 > h6{
+    text-align: left;
+    padding-left: 5% !important;
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 120% !important;
+}
+
 label{
     text-align: left;
     opacity: 0.6;
@@ -107,6 +120,10 @@ label{
 }
 
 .subject > .row{
+    padding: 1%;
+}
+
+.subject0 > .row{
     padding: 1%;
 }
 
@@ -137,8 +154,8 @@ label{
     max-width: 100% !important;
 }
 
-.gpaeval{
-    padding-bottom: 5%;
+.gpaval{
+    padding: 2%;
 }
 
 .sgpa{
