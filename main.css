@@ -98,6 +98,19 @@ label{
     background-color: rgba(0, 0, 0, 0.027)
 }
 
+.textfield{
+    width: 80% !important;
+    padding: 3% !important;
+    border: none !important;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.027);
+    margin-bottom: 0 !important;
+}
+
+.subject > .row{
+    padding: 1%;
+}
+
 .add{
     background-color: #2d84fd;
     color: white !important;
@@ -143,4 +156,12 @@ label{
 
 .comment{
     color: #00000060;
+}
+
+.warning{
+    color: rgb(223, 0, 0);
+    font-weight: 400;
+    font-size: 75%;
+    text-align: left;
+    margin-left: 10%;
 }
