@@ -30,6 +30,7 @@ $(document).ready(function(){
     $(".warning").hide()
     $(".cgpa").hide()
     $(".gpaval").hide()
+    $(".CGPAlabel").hide()
     $("#cgpaTillLastSem").ForceNumericOnly()
     $("#creditsTillLastSem").ForceNumericOnly()
     $("#cgpaThisSem").ForceNumericOnly()
@@ -45,6 +46,7 @@ $(document).ready(function(){
     });
 
     $("#GPA").click(function(){
+        $(".gpaval").hide()
         $(".cgpa").hide()
         $(".gpa").show()
         $("#CGPA").removeClass('active')
@@ -55,6 +57,7 @@ $(document).ready(function(){
     })
 
     $("#CGPA").click(function(){
+        $(".gpaval").hide()
         $(".gpa").hide()
         $(".cgpa").show()
         $("#GPA").removeClass('active')
@@ -65,12 +68,15 @@ $(document).ready(function(){
     })
     
     $(".textfield").on('propertychange change keyup paste input', function(){
+        $('label[for='+this.id+']').show();
+        if ($(".textfield").val() == ""){
+            $('label[for='+this.id+']').hide()
+        }
         var cgpaTLS = parseFloat($("#cgpaTillLastSem").val())
         var credsTLS = parseInt($("#creditsTillLastSem").val())
         var cgpaTS = parseFloat($("#cgpaThisSem").val())
         var credsTS = parseInt($("#creditsThisSem").val())
         if (cgpaTLS == "" ||credsTLS == "" || cgpaTS == "" || credsTS == ""){
-            
             $(".gpaval").hide()
         }
         else if (cgpaTLS > 10){
