@@ -3,10 +3,37 @@ var totalCredits = 0
 var credits = [];
 var grades = []
 var totalCGPA = 0
+
+jQuery.fn.ForceNumericOnly = function(){
+    return this.each(function()
+    {
+        $(this).keydown(function(e)
+        {
+            var key = e.charCode || e.keyCode || 0;
+            // allow backspace, tab, delete, enter, arrows, numbers and keypad numbers ONLY
+            // home, end, period, and numpad decimal
+            return (
+                key == 8 || 
+                key == 9 ||
+                key == 13 ||
+                key == 46 ||
+                key == 110 ||
+                key == 190 ||
+                (key >= 35 && key <= 40) ||
+                (key >= 48 && key <= 57) ||
+                (key >= 96 && key <= 105));
+        });
+    });
+};
+
 $(document).ready(function(){
     $(".warning").hide()
     $(".cgpa").hide()
     $(".gpaval").hide()
+    $("#cgpaTillLastSem").ForceNumericOnly()
+    $("#creditsTillLastSem").ForceNumericOnly()
+    $("#cgpaThisSem").ForceNumericOnly()
+    $("#creditsThisSem").ForceNumericOnly()
     $(".add").click(function(){
         fieldCount = fieldCount + 1;
         var subjectFields = '<div class="row"><div class="six columns"><label for="credits">Credits</label><select class="u-full-width field" id="credits'+fieldCount+'"><option hidden>Select credits</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div><div class="six columns"><label for="grade">Grade</label><select class="u-full-width field" id="grade'+fieldCount+'"><option hidden>Select a grade</option><option value="10">S</option><option value="9">A</option><option value="8">B</option><option value="7">C</option><option value="6">D</option><option value="5">E</option><option value="0">F</option><option value="0">N</option></select></div></div>'
@@ -36,7 +63,7 @@ $(document).ready(function(){
         $("#CGPA").parent().addClass('selected')
 
     })
-
+    
     $(".textfield").on('propertychange change keyup paste input', function(){
         var cgpaTLS = parseFloat($("#cgpaTillLastSem").val())
         var credsTLS = parseInt($("#creditsTillLastSem").val())
@@ -48,6 +75,7 @@ $(document).ready(function(){
         }
         else if (cgpaTLS > 10){
             $(".cgpa1").show()
+            $("#cgpaTillLastSem").css('border-color', 'red !important');
             $(".gpaval").hide()
         }
         else if (cgpaTS > 10){
