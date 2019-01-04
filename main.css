@@ -104,7 +104,7 @@ label{
     border: none !important;
     outline: none;
     background-color: rgba(0, 0, 0, 0.027);
-    margin-bottom: 0 !important;
+    margin-bottom: 1% !important;
 }
 
 .subject > .row{
