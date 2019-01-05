@@ -1,4 +1,5 @@
-.background {
+html {
+    background: url(Image.svg) no-repeat center center fixed;
     max-width: 100% !important;
     width: 100% !important;
     position: fixed;
@@ -6,6 +7,10 @@
     left: 0;
     min-width: 100%;
     z-index: -999;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body{
@@ -16,7 +21,7 @@ body{
 a{
     text-decoration: none;
     font-weight: 600;
-    color: black !important;
+    color: rgb(255, 255, 255) !important;
 }
 
 .title {
@@ -44,7 +49,7 @@ a{
 .card{
     position: relative !important;
     background: #fff;
-    box-shadow: 0 5px 20px 0 hsla(0,0%,70%,.5);
+    box-shadow: 0 5px 20px 0 rgba(43, 43, 43, 0.5);
     border-radius: .5rem;
     text-align: center;
     margin-bottom: 5%;
@@ -63,11 +68,11 @@ button{
 }
 
 .selected{
-    border-bottom: 2px solid #2d85fd !important;
+    border-bottom: 2px solid #1f1f1f !important;
 }
 
 .active{
-    color: #2d85fd !important;
+    color: #1f1f1f !important;
     letter-spacing: .5px !important;
 }
 
@@ -115,6 +120,7 @@ label{
     padding: 3% !important;
     border: none !important;
     outline: none;
+    border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.027);
     margin-bottom: 1% !important;
 }
@@ -128,30 +134,30 @@ label{
 }
 
 .add{
-    background-color: #2d84fd;
+    background-color: #1f1f1f;
     color: white !important;
     width: 90% !important;
     border-radius: 5px !important;
     margin: 3% !important;
-    height: 100% !important;
-    display: inline-block !important;
     
 }
 
 .add:hover{
     color: white;
-    background-color: #217af7;
+    background-color: #0f0f0f;
 }
 
 .footer{
-    background-color: white;
+    background-color: rgba(71, 71, 71, 0.055);
     text-align: center;
+    vertical-align: middle;
     font-size: 80%;
     font-weight: 500;
     position: relative !important;
     width: 100% !important; 
     bottom: 0;
     max-width: 100% !important;
+    color: #fff;
 }
 
 .gpaval{
